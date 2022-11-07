@@ -16,7 +16,12 @@
 
 ## Dashboard
 
-Run the below to access via `localhost:2746` with `kubectl -n argo port-forward deployment/argo-server 2746:2746`.
+Run the below to access via `localhost:2746` with the below.
+
+```sh
+kubectl config use-context minikube
+kubectl -n argo port-forward deployment/argo-server 2746:2746
+```
 
 
 
