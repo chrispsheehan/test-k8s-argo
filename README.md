@@ -16,7 +16,7 @@
 
 ## Dashboard
 
-Run the below to access via `localhost:2746` with the below.
+Run the below to access via `localhost:2746/workflows?` with the below.
 
 ```sh
 kubectl config use-context minikube
