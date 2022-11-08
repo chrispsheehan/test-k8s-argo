@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: build-it
+  namespace: argo
+spec:
+  templates:
+    - name: main
+      image: 'argoproj/argosay:v2'
+  entrypoint: main
+---
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowEventBinding
+metadata:
+  name: build-it
+  namespace: argo
+spec:
+  event:
+    selector: "true"
+    #  simple selector - can use metadata
+  submint:
+    workflowTemplateRef:
+      name: build-it
