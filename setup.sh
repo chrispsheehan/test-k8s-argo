@@ -34,9 +34,6 @@ then
     done
 
     kubectl apply -n argo-events -f argo-event-webhook-sa.yaml
-    kubectl apply -n argo-events -f argo-event-webhook.yaml
-    kubectl apply -n argo-events -f argo-event-sensor.yaml
-    kubectl apply -f argo-workflow.yaml
 else
     echo "you need to be in the minikube context! have you installed and started minikube as per readme?"
 fi
