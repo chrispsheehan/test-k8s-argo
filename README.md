@@ -28,6 +28,11 @@ kubectl -n argo port-forward deployment/argo-server 2746:2746
 kubectl -n argo-events port-forward $(kubectl -n argo-events get pods -l eventsource-name=webhook --field-selector=status.phase==Running -o jsonpath="{.items[0].metadata.name}") 12000:12000
 ```
 
+### to-do (trigger from github)
+
+https://argoproj.github.io/argo-events/tutorials/03-trigger-sources/
+https://raw.githubusercontent.com/argoproj/argo-events/stable/examples/tutorials/03-trigger-sources/sensor-git.yaml
+
 ```sh
 curl -d '{"message":"this is my first webhook"}' -H "Content-Type: application/json" -X POST http://localhost:12000/github
 ```
