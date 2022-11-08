@@ -16,7 +16,7 @@ Intial setup with `sh ./setup.sh` or switch context via `kubectl config use-cont
 
 ## Dashboard
 
-Run the below to access via `localhost:2746/workflows?` with the below.
+Run the below to access via `https://localhost:2746/workflows?` with the below.
 
 ```sh
 kubectl -n argo port-forward deployment/argo-server 2746:2746
