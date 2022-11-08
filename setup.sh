@@ -19,5 +19,14 @@ kubectl patch deployment \
   "--auth-mode=server"
 ]}]'
 
+# https://argoproj.github.io/argo-events/installation/
+kubectl create namespace argo-events
+kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-events/stable/manifests/namespace-install.yaml
+kubectl apply -n argo-events -f https://raw.githubusercontent.com/argoproj/argo-events/stable/examples/eventbus/native.yaml
+while [[ $(kubectl get pods -n argo-events --no-headers -o jsonpath='{.items[0].status.phase}') != "Running" ]]; do
+   echo 'waiting for argo events pods...'
+   sleep 3
+done
 
-
+kubectl apply -n argo-events -f argo-event-webhook.yaml
+kubectl apply -n argo-events -f argo-event-sensor.yaml
