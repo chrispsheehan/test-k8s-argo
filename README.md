@@ -36,3 +36,5 @@ https://raw.githubusercontent.com/argoproj/argo-events/stable/examples/tutorials
 ```sh
 curl -d '{"message":"this is my first webhook"}' -H "Content-Type: application/json" -X POST http://localhost:12000/github
 ```
+
+Assert it has run via `https://localhost:2746/workflows/argo-events?`
