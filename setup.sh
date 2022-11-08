@@ -8,8 +8,8 @@ then
     # Get latest argo release from https://github.com/argoproj/argo-workflows/releases
     kubectl apply -n argo -f https://github.com/argoproj/argo-workflows/releases/download/v3.4.3/install.yaml
     while [[ $(kubectl get pods -n argo --no-headers -o jsonpath='{.items[0].status.phase}') != "Running" ]]; do
-    echo 'waiting for argo pods...'
-    sleep 3
+        echo 'waiting for argo pods...'
+        sleep 3
     done
 
     kubectl patch deployment \
@@ -28,8 +28,8 @@ then
     kubectl apply -n argo-event-setup
 
     while [[ $(kubectl get pods -n argo-events --no-headers -o jsonpath='{.items[0].status.phase}') != "Running" ]]; do
-    echo 'waiting for argo events pods...'
-    sleep 3
+        echo 'waiting for argo events pods...'
+        sleep 3
     done
 
     kubectl apply -n argo-events -f argo-event-webhook-sa.yaml
