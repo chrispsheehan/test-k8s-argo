@@ -1,5 +1,7 @@
 # test-k8s-argo
 
+[Inspiration](https://www.youtube.com/watch?v=MeU5_k9ssrs)
+
 ## Pre-reqs
 
 ```sh
