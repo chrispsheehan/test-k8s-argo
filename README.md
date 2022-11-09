@@ -3,43 +3,40 @@
 ## Pre-reqs
 
 ```sh
-brew install kubectl
 brew install --cask docker
+brew install kubectl
 brew install minikube
-brew install argo
 brew install argocd
 ```
 
-## Get started
+## [Install locally](https://argo-cd.readthedocs.io/en/stable/getting_started/)
 
-Intial setup with `sh ./setup.sh` or switch context via `kubectl config use-context minikube`
+- Start docker desktop
+- Start minikube `minikube start`
+- Run below setup script
+
+```sh
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
+```
 
 ## Dashboard
 
-Run the below to access via `https://localhost:2746/workflows?` with the below.
+- Open port-forward with `kubectl port-forward svc/argocd-server -n argocd 8080:443`
+- Access UI via `https://localhost:8080/login?`
+- Obtain deafault password with `kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo`
+- Login with admin user as per below
 
 ```sh
-kubectl -n argo port-forward deployment/argo-server 2746:2746
+argocd login localhost:8080 
+WARNING: server certificate had error: x509: “Argo CD” certificate is not trusted. Proceed insecurely (y/n)? y
+Username: admin
+Password: 
+'admin:login' logged in successfully
+Context 'localhost:8080' updated
 ```
 
-## [Hit Webhook](https://www.youtube.com/watch?v=vbI3YqoaSpU)
-
-```sh
-kubectl apply -f ./github/argo-event-webhook.yaml
-kubectl apply -f ./github/argo-workflow.yaml
-```
-
-```sh
-kubectl -n argo-events port-forward $(kubectl -n argo-events get pods -l eventsource-name=webhook --field-selector=status.phase==Running -o jsonpath="{.items[0].metadata.name}") 12000:12000
-```
-
-```sh
-curl -d '{"message":"this is my first webhook"}' -H "Content-Type: application/json" -X POST http://localhost:12000/github
-```
-
-Assert it has run via `https://localhost:2746/workflows/argo-events?`
-
-### to-do (trigger from github)
-
-https://argoproj.github.io/argo-events/tutorials/03-trigger-sources/
-https://raw.githubusercontent.com/argoproj/argo-events/stable/examples/tutorials/03-trigger-sources/sensor-git.yaml
+- Update password via `argocd account update-password`
+- Check new password by re-running `argocd login localhost:8080`
+- Delete initial password secret with `kubectl delete secret -n argocd argocd-initial-admin-secret`
