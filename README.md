@@ -42,3 +42,16 @@ Context 'localhost:8080' updated
 - Update password via `argocd account update-password`
 - Check new password by re-running `argocd login localhost:8080`
 - Delete initial password secret with `kubectl delete secret -n argocd argocd-initial-admin-secret`
+
+## Deploy app (connect to git)
+
+- Connect to Git via `https://localhost:8080/settings/repos?addRepo=true`
+  - Make your life easy by marking as public (for testing)
+
+- Create app `kubectl apply -f argocd-app.yaml -n argocd`
+
+- App can be seen at `https://localhost:8080/applications?`
+
+## NOTES
+
+- Argocd will update from the repo every 3 minutes (be patient!)
