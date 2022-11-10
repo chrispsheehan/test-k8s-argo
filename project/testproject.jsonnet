@@ -1,9 +1,11 @@
+local Kube = import "kube.libsonnet";
+
 [
   {
     apiVersion: 'v1',
     kind: 'Namespace',
     metadata: {
-      name: 'project1',
+      name: Kube.Namespace,
     },
   },
   {
@@ -11,7 +13,7 @@
     kind: 'Deployment',
     metadata: {
       name: 'nginx-deployment',
-      namespace: 'project1',
+      namespace: Kube.Namespace,
       labels: {
         app: 'nginx',
       },
@@ -53,7 +55,7 @@
         'argocd.argoproj.io/hook': 'PostSync',
       },
       name: 'testbox',
-      namespace: 'project1',
+      namespace: Kube.Namespace,
     },
     spec: {
       template: {
