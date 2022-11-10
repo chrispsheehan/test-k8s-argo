@@ -3,14 +3,17 @@ kind: Job
 metadata:
   annotations:
     argocd.argoproj.io/hook: PostSync
-  name: pi
+  name: testbox
   namespace: project1
 spec:
   template:
     spec:
       containers:
-      - name: pi
-        image: perl:5.34.0
-        command: ["perl",  "-Mbignum=bpi", "-wle", "print badgers badgers badgers"]
+      - command:
+        - sh
+        - -c
+        - sleep 2 && echo this is a test cmd
+        image: busybox
+        name: test-thing
       restartPolicy: Never
   backoffLimit: 4
