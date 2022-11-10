@@ -1,6 +1,7 @@
 # test-k8s-argo
 
-[Inspiration](https://www.youtube.com/watch?v=MeU5_k9ssrs)
+- [Inspiration](https://www.youtube.com/watch?v=MeU5_k9ssrs)
+- [jsonnet usage](https://argo-cd.readthedocs.io/en/stable/user-guide/jsonnet/)
 
 ## Pre-reqs
 
