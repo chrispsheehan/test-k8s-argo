@@ -7,6 +7,7 @@
 ```sh
 brew install --cask docker
 brew install kubectl
+brew install kubecfg
 brew install minikube
 brew install argocd
 ```
@@ -47,6 +48,8 @@ Context 'localhost:8080' updated
 - Access UI via `https://localhost:8080/login?`
 
 ## Deploy app (connect to git)
+
+- *IMPORTANT*: Change `[YOU]` to match your github url in `argocd-app.yaml`
 
 - Connect to Git via `https://localhost:8080/settings/repos?addRepo=true`
   - Make your life easy by marking as public (for testing)

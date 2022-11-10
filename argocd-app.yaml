@@ -9,7 +9,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: project
-    repoURL: 'https://github.com/chrispsheehan/test-k8s-argo.git'
+    repoURL: '[https://github.com/[YOU]/test-k8s-argo.git]'
     targetRevision: HEAD
   project: default
   syncPolicy:
