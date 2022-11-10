@@ -9,8 +9,8 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: project
-    repoURL: '[https://github.com/[YOU]/test-k8s-argo.git]'
-    targetRevision: HEAD
+    repoURL: 'https://github.com/[YOU]/test-k8s-argo.git'
+    targetRevision: jsonnet
   project: default
   syncPolicy:
     automated:
