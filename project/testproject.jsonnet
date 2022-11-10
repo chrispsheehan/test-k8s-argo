@@ -63,7 +63,7 @@
               command: [
                 'sh',
                 '-c',
-                'sleep 2 && echo hi QA team',
+                'sleep 2 && echo hi QA team jsonnet too',
               ],
               image: 'busybox',
               name: 'test-thing',
