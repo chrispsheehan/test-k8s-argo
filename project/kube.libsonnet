@@ -1,5 +1,5 @@
 // more here https://github.com/google/jsonnet/tree/master/case_studies/kubernetes
 
 {
-    Namespace:: "ProjectX"
+    Namespace:: "Project1"
 }
