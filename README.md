@@ -48,6 +48,14 @@ Context 'localhost:8080' updated
 
 - Access UI via `https://localhost:8080/login?`
 
+## Jsonnet
+
+- Kubernetes manifests are built from json files. YAML can be produced as per below.
+
+```sh
+
+```
+
 ## Deploy app (connect to git)
 
 - *IMPORTANT*: Change `[YOU]` to match your github url in `argocd-app.yaml`
