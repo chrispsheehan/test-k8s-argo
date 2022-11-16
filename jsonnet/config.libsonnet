@@ -11,5 +11,6 @@
     Test:: {
         Image: 'busybox',
         Name: 'test-box',
+        BackoffLimit: 3
     }
 }
