@@ -1,5 +1,5 @@
 {
-    Namespace:: 'project-xy',
+    Namespace:: 'project',
 
     App:: {
         Image: 'nginx:1.14.2',
