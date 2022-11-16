@@ -8,15 +8,12 @@ spec:
     namespace: default
     server: 'https://kubernetes.default.svc'
   source:
-    path: project
+    path: jsonnet
     repoURL: 'https://github.com/[YOU]/test-k8s-argo.git'
     targetRevision: jsonnet
   project: default
   syncPolicy:
     automated:
-      prune: false
-      selfHeal: false
-    syncOptions:
-      - CreateNamespace=true
-      - ApplyOutOfSyncOnly=true
+      prune: true
+      selfHeal: true
 
