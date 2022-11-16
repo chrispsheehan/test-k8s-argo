@@ -1,4 +1,4 @@
-local Config = import "config.libsonnet";
+local Config = import "../config.libsonnet";
 
 {
     Metadata(name, id): {

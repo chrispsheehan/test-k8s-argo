@@ -2,13 +2,6 @@ local Config = import "base/config.libsonnet";
 
 [
   {
-    apiVersion: 'v1',
-    kind: 'Namespace',
-    metadata: {
-      name: Config.Namespace,
-    },
-  },
-  {
     apiVersion: 'apps/v1',
     kind: 'Deployment',
     metadata: {
