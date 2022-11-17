@@ -11,7 +11,7 @@ PostSyncJob.Spec(Config.Test.Name) {
                         command: [
                             'sh',
                             '-c',
-                            'sleep 2 && echo hi QA team jsonnet too :)',
+                            'sleep 2 && echo hi QA team jsonnet too blah',
                         ],
                         image: Config.Test.Image,
                         name: Config.Test.Name,
