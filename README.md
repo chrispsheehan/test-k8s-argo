@@ -53,7 +53,7 @@ Context 'localhost:8080' updated
 - Kubernetes manifests are built from json files. YAML can be produced as per below.
 
 ```sh
-kubecfg show -o yaml manifests/testproject.jsonnet
+kubecfg show -o yaml manifests/namespace.jsonnet
 ```
 
 ## Deploy app (connect to git)
