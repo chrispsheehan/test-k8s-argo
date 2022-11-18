@@ -12,7 +12,7 @@ spec:
       - command:
         - sh
         - -c
-        - sleep 2 && echo hi QA team
+        - sleep 2 && echo hi badger badger
         image: busybox
         name: test-thing
       restartPolicy: Never
