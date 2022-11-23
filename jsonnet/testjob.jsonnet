@@ -10,6 +10,9 @@ PostSyncJob.Spec(Config.Test.Name) {
                 containers: [
                     {
                         command: [
+                            "nginx", 
+                            "-g", 
+                            "daemon off;",
                             'curl ' + TargetAppUrl
                         ],
                         image: Config.Test.Image,
