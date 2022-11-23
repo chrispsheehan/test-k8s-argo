@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: test
+  name: deploy-and-test-poc
 spec:
   destination:
     name: ''
@@ -9,7 +9,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   source:
     path: jsonnet
-    repoURL: 'https://github.com/[YOU]/test-k8s-argo.git'
+    repoURL: 'https://github.com/chrispsheehan/test-k8s-argo.git'
     targetRevision: main
   project: default
   syncPolicy:
