@@ -12,6 +12,6 @@
     Test:: {
         Image: 'nginx:alpine',
         Name: 'test-box',
-        BackoffLimit: 3
+        BackoffLimit: 1
     }
 }

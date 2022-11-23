@@ -10,11 +10,8 @@ PostSyncJob.Spec(Config.Test.Name) {
                 containers: [
                     {
                         command: [
-                            'curl'
+                            'curl ' + TargetAppUrl
                         ],
-                        args: [ 
-                            TargetAppUrl
-                        ]
                         image: Config.Test.Image,
                         name: Config.Test.Name,
                     },
