@@ -9,6 +9,8 @@ PostSyncJob.Spec(Config.Test.Name) {
             spec: {
                 containers: [
                     {
+                        // this could execute some tests :)
+                        // a SyncFail could report any issues
                         command: [
                             "/usr/bin/curl"
                         ],
