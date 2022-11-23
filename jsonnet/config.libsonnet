@@ -5,7 +5,8 @@
         Image: 'nginx:1.14.2',
         Name: 'nginx',
         Replicas: 2,
-        Port: 80
+        Port: 80,
+        Service: 'app-service'
     },
 
     Test:: {
