@@ -10,9 +10,8 @@ PostSyncJob.Spec(Config.Test.Name) {
                 containers: [
                     {
                         command: [
-                            'sh',
-                            '-c',
-                            'sleep 2 && echo hello && curl ' + TargetAppUrl,
+                            'curl',
+                            TargetAppUrl,
                         ],
                         image: Config.Test.Image,
                         name: Config.Test.Name,
