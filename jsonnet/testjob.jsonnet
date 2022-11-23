@@ -4,7 +4,7 @@ local TargetAppUrl = 'http://' + Config.App.Service + '.' + Config.Namespace + '
 
 
 [
-    PostSyncJob.Spec(Config.Test.Name, 1) {
+    PostSyncJob.Spec(Config.Test.Name, "1") {
         spec: {
             template: {
                 spec: {
@@ -28,7 +28,7 @@ local TargetAppUrl = 'http://' + Config.App.Service + '.' + Config.Namespace + '
             backoffLimit: Config.Test.BackoffLimit,
         },
     },
-    PostSyncJob.Spec(Config.Test.Name, 2) {
+    PostSyncJob.Spec(Config.Test.Name, "2") {
         spec: {
             template: {
                 spec: {
