@@ -3,7 +3,7 @@ local Config = import "config.libsonnet";
 local TargetAppUrl = 'http://' + Config.App.Service + '.' + Config.Namespace + '.svc.cluster.local';
 
 
-PostSyncJob.Spec(Config.Test.Name) {
+PostSyncJob.Spec(Config.Test.Name, 1) {
     spec: {
         template: {
             spec: {
