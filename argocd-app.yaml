@@ -10,7 +10,7 @@ spec:
   source:
     path: jsonnet
     repoURL: 'https://github.com/[YOU]/test-k8s-argo.git'
-    targetRevision: jsonnet
+    targetRevision: main
   project: default
   syncPolicy:
     automated:
