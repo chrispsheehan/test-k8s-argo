@@ -1,5 +1,7 @@
 # test-k8s-argo
 
+A small proof of concept for running tests whenever a kubernetes bases project is updated.
+
 - [Inspiration](https://www.youtube.com/watch?v=MeU5_k9ssrs)
 - [jsonnet usage](https://argo-cd.readthedocs.io/en/stable/user-guide/jsonnet/)
 
@@ -55,7 +57,7 @@ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}
 kubecfg show -o yaml jsonnet/namespace.jsonnet
 ```
 
-## Deploy app (connect to git)
+## Deploy app (connect to and watch git repo)
 
 - *IMPORTANT*: To use your repo change `spec.source.repoURL` to your github url within `argocd-app.yaml`.
 
