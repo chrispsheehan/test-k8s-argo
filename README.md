@@ -1,6 +1,7 @@
 # test-k8s-argo
 
-[Inspiration](https://www.youtube.com/watch?v=MeU5_k9ssrs)
+- [Inspiration](https://www.youtube.com/watch?v=MeU5_k9ssrs)
+- [jsonnet usage](https://argo-cd.readthedocs.io/en/stable/user-guide/jsonnet/)
 
 ## Pre-reqs
 
@@ -46,6 +47,14 @@ Context 'localhost:8080' updated
 ## UI
 
 - Access UI via `https://localhost:8080/login?`
+
+## Jsonnet
+
+- Kubernetes manifests are built from json files. YAML can be produced as per below.
+
+```sh
+kubecfg show -o yaml manifests/namespace.jsonnet
+```
 
 ## Deploy app (connect to git)
 

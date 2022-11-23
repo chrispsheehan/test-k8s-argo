@@ -1,0 +1,5 @@
+{
+    Template(name): {
+        restartPolicy: 'Always',
+    },
+}
