@@ -9,7 +9,7 @@ local Config = import "../config.libsonnet";
                 'argocd.argoproj.io/hook': 'PostSync',
                 'argocd.argoproj.io/sync-wave': wave,
             },
-            name: name,
+            name: (name + "-wave:" + wave),
             namespace: Config.Namespace,
         }
     },
