@@ -7,7 +7,7 @@ local Config = import "../config.libsonnet";
         metadata: {
             annotations: {
                 'argocd.argoproj.io/hook': 'PostSync',
-                'argocd.argoproj.io/sync-wave': wave
+                'argocd.argoproj.io/sync-wave': wave,
             },
             name: name,
             namespace: Config.Namespace,

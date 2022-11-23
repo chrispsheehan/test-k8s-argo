@@ -16,7 +16,7 @@ PostSyncJob.Spec(Config.Test.Name, 1) {
                         ],
                         args: [
                             TargetAppUrl
-                        ]
+                        ],
                         image: Config.Test.Image,
                         name: Config.Test.Name,
                     },
