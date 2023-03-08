@@ -11,7 +11,7 @@
 
     Test:: {
         Image: 'nginx:alpine',
-        Name: 'test-box',
+        Name: 'test-boxss',
         BackoffLimit: 1
     }
 }
