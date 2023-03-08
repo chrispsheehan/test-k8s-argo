@@ -1,6 +1,6 @@
 local PostSyncJob = import "./base/postsync.job.libsonnet";
 local Config = import "config.libsonnet";
-local TargetAppUrl = 'http://' + Config.App.Service + '.' + Config.Namespace + '.svc.cluster.local';
+local TargetAppUrl = 'httpxx://' + Config.App.Service + '.' + Config.Namespace + '.svc.cluster.local';
 
 
 [
